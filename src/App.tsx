@@ -3,8 +3,8 @@ import './App.css';
 const App = () => {
   return (
     <div className="content">
-      <h1>Rsbuild with React</h1>
-      <p>Start building amazing things with Rsbuild.</p>
+      <h1>I am MF Sub App</h1>
+      <a href="/">back to home</a>
     </div>
   );
 };
