@@ -1,0 +1,20 @@
+version: '3'
+
+name: module-federation-provider
+
+services:
+  caddy:
+    container_name: provider-caddy
+    image: caddy
+    restart: always
+    volumes:
+      - caddy-config:/config
+      - caddy-data:/data
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./dist:/usr/share/caddy
+    ports:
+      - "82:82"
+
+volumes:
+  caddy-config:
+  caddy-data:
