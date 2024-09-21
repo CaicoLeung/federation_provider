@@ -5,11 +5,12 @@ import { ModuleFederationPlugin } from '@module-federation/enhanced/rspack';
 export default defineConfig({
   plugins: [pluginReact()],
   server: {
-    port: 3000
+    port: 3002
   },
   dev: {
     // It is necessary to configure assetPrefix, and in the production environment, you need to configure output.assetPrefix
-    assetPrefix: true
+    assetPrefix: 'http://localhost:3002/',
+    writeToDisk: true
   },
   tools: {
     rspack: {
