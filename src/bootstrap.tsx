@@ -6,7 +6,15 @@ import { worker } from './mock/mock';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
-worker.start().then(() => {
+async function enableMocking() {
+  if (process.env.NODE_ENV !== 'development') {
+    return
+  }
+
+  return worker.start()
+}
+
+enableMocking().then(() => {
   root.render(
     <React.StrictMode>
       <App />
